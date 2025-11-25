@@ -34,13 +34,13 @@ public class Messages {
             addDefault(l, SELECTOR_LORE, Collections.singletonList("&7Right-Click to to open!"), Collections.singletonList("&7Deschide cu click-dreapta!"));
             addDefault(l, CHOICE_LORE, Arrays.asList("", "&7&o{members}", "", "&eClick to join!"), Arrays.asList("", "&7&o{members}", "", "&eIntra cu Click!"));
             addDefault(l, CHOICE_NAME, "{color}{team} &f({selected}&7/&f{total})", "{color}{team} &f({selected}&7/&f{total})");
-            addDefault(l, SWITCH_DISABLED, "{prefix}&cYou cannot change your team!", "{prefix}&cPoti alege echipa o singura data!");
-            addDefault(l, TEAM_JOIN, "{prefix}&eYou joined the {color}{team} &eteam!", "{prefix}&eTe-ai alaturat echipei {color}{team}&e!");
-            addDefault(l, TEAM_FULL, "{prefix}{color}{team} &c Team is full!", "{prefix}&cEchipa {color}{team} &c este plina!");
-            addDefault(l, TEAM_NOT_BALANCED, "{prefix}&cTeams are not balanced! Try joining another team!", "{prefix}&cEchipele nu sunt echilibrate! Incearca alta!");
-            addDefault(l, PARTY_DENIED, "{prefix}&cYou can't choose your team because you're in a party!", "{prefix}&cNu poti alege o echipa pentru că te afli intr-un party!");
-            addDefault(l, CANT_JOIN_WHILE_STARTING, "{prefix}&cYou cannot join this team at this moment. The game is starting!", "{prefix}&cNu poti intra in aceasta echipa chiar acum. Incepe jocul!");
-            addDefault(l, ALREADY_IN_TEAM, "{prefix}&cYou are already in this team!", "{prefix}&cSunteți deja în această echipă");
+            addDefault(l, SWITCH_DISABLED, "%bw_lang_prefix%&cYou cannot change your team!", "%bw_lang_prefix%&cPoti alege echipa o singura data!");
+            addDefault(l, TEAM_JOIN, "%bw_lang_prefix%&eYou joined the {color}{team} &eteam!", "%bw_lang_prefix%&eTe-ai alaturat echipei {color}{team}&e!");
+            addDefault(l, TEAM_FULL, "%bw_lang_prefix%{color}{team} &c Team is full!", "%bw_lang_prefix%&cEchipa {color}{team} &c este plina!");
+            addDefault(l, TEAM_NOT_BALANCED, "%bw_lang_prefix%&cTeams are not balanced! Try joining another team!", "%bw_lang_prefix%&cEchipele nu sunt echilibrate! Incearca alta!");
+            addDefault(l, PARTY_DENIED, "%bw_lang_prefix%&cYou can't choose your team because you're in a party!", "%bw_lang_prefix%&cNu poti alege o echipa pentru că te afli intr-un party!");
+            addDefault(l, CANT_JOIN_WHILE_STARTING, "%bw_lang_prefix%&cYou cannot join this team at this moment. The game is starting!", "%bw_lang_prefix%&cNu poti intra in aceasta echipa chiar acum. Incepe jocul!");
+            addDefault(l, ALREADY_IN_TEAM, "%bw_lang_prefix%&cYou are already in this team!", "%bw_lang_prefix%&cSunteți deja în această echipă");
         }
     }
 
