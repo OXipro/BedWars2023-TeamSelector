@@ -25,6 +25,7 @@ public class Config {
     public static final String GUI_OPEN_SOUND = "gui-open-sound";
     public static final String SUCCESS_SOUND = "success-sound";
     public static final String ERROR_SOUND = "error-sound";
+    public static final String TEAM_HELMET = "team-helmet";
     public static ConfigManager config;
 
     /**
@@ -47,6 +48,7 @@ public class Config {
                 GUI_OPEN_SOUND + ": BLOCK_SHULKER_BOX_OPEN - The sound to be played when you open the team selector.\n" +
                 SUCCESS_SOUND + ": BLOCK_SHULKER_BOX_CLOSE - The sound to be played when you select a team successfully.\n" +
                 ERROR_SOUND + ": BLOCK_ANVIL_DESTROY - The sound to be played when you can't select a team.\n" +
+                TEAM_HELMET + ": true - Equip an helmet based on the color of team chosen to the player.\n" +
                 "Sounds for latest version: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\n" +
                 "Sounds for 1.8 or older: https://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html");
 
@@ -59,6 +61,7 @@ public class Config {
         yml.addDefault(GUI_OPEN_SOUND, Main.bw.getForCurrentVersion("CHEST_OPEN", "CHEST_OPEN", "BLOCK_SHULKER_BOX_OPEN"));
         yml.addDefault(SUCCESS_SOUND, Main.bw.getForCurrentVersion("CHEST_CLOSE", "CHEST_CLOSE", "BLOCK_SHULKER_BOX_CLOSE"));
         yml.addDefault(ERROR_SOUND, Main.bw.getForCurrentVersion("ANVIL_BREAK", "ANVIL_BREAK", "BLOCK_ANVIL_DESTROY"));
+        yml.addDefault(TEAM_HELMET, true);
         yml.options().copyDefaults(true);
         config.save();
     }
