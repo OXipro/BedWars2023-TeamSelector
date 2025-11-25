@@ -2,6 +2,7 @@ package com.tomkeuper.bedwars.teamselector.teamselector;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -17,9 +18,11 @@ import com.tomkeuper.bedwars.teamselector.api.events.TeamSelectorChooseEvent;
 import com.tomkeuper.bedwars.teamselector.api.events.TeamSelectorOpenEvent;
 import com.tomkeuper.bedwars.teamselector.configuration.Config;
 import com.tomkeuper.bedwars.teamselector.configuration.Messages;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 public class TeamSelectorGUI {
@@ -243,6 +246,14 @@ public class TeamSelectorGUI {
         //Refresh ream selector item
         giveItem(player, bwt);
 
+        // give leather helmet based on chosen team color if config allows it
+        if (Config.config.getBoolean("team-helmet")) {
+            ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
+            LeatherArmorMeta meta = (LeatherArmorMeta) helmet.getItemMeta();
+            meta.setColor(bwt.getColor().bukkitColor());
+            helmet.setItemMeta(meta);
+            player.getInventory().setHelmet(helmet);
+        }
 
         player.sendMessage(Language.getMsg(player, Messages.TEAM_JOIN).replace("{color}", bwt.getColor().chat().toString()).replace("{team}", teamDisplayName)
                 .replace("{selected}", String.valueOf(TeamManager.getInstance().getMembers(bwt, arena))).replace("{total}", String.valueOf(arena.getMaxInTeam())));
