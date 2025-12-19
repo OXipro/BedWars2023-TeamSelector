@@ -7,9 +7,4 @@ This is an addon plugin for BedWars2023. This plug-in will give you an item when
 
 ---
 **Server owner documentation**
-* [Configuration](config)
-* [Messages](messages)
-
-**Developer documentation**
-* [Getting started](api)
-* [JavaDoc](http://javadocs.andrei1058.com/BedWars1058-TeamSelector/)
+* [coming soon...](config)
