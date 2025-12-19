@@ -1,5 +1,6 @@
 package com.tomkeuper.bedwars.teamselector;
 
+import com.tomkeuper.bedwars.teamselector.PlaceholderAPI.PlaceholderAPI;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
@@ -59,7 +60,6 @@ public class Main extends JavaPlugin {
         // register team selector API
         Bukkit.getServicesManager().register(TeamSelectorAPI.class, new TeamSelector(), this, ServicePriority.Normal);
 
-
         //Create configuration
         Config.addDefaultConfig();
 
@@ -75,5 +75,11 @@ public class Main extends JavaPlugin {
         metrics.addCustomChart(new SimplePie("allot_team_change", () -> String.valueOf(Config.config.getBoolean(Config.ALLOW_TEAM_CHANGE))));
         metrics.addCustomChart(new SimplePie("balance_teams", () -> String.valueOf(Config.config.getBoolean(Config.BALANCE_TEAMS))));
         metrics.addCustomChart(new SimplePie("balance_teams", () -> String.valueOf(Config.config.getBoolean(Config.BALANCE_TEAMS))));
+
+
+        if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) { //
+            new PlaceholderAPI().hook(); //
+            getLogger().info("Hooked into PlaceholderAPI");
+        } else getLogger().info("PlaceholderAPI not found, not hooking into it");
     }
 }
