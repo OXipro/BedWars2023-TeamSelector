@@ -29,7 +29,7 @@ public class ArenaListener implements Listener {
                 if (e.getArena().isPlayer(e.getPlayer()) || e.getArena().getStatus() != GameState.playing) {
                     TeamSelectorGUI.giveItem(e.getPlayer(), null);
                 }
-            }, 30L);
+            }, 5L);
         }
     }
 
