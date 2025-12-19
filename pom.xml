@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tomkeuper.bedwars</groupId>
-    <artifactId>team-selector</artifactId>
-    <version>0.8</version>
+    <artifactId>BedWars2023-TeamSelector</artifactId>
+    <version>0.9</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
