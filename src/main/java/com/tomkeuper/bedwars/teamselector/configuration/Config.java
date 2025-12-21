@@ -38,20 +38,16 @@ public class Config {
 
         config = new ConfigManager(Main.plugin, "config", "plugins/BedWars2023/Addons/TeamSelector");
         YamlConfiguration yml = config.getYml();
-        yml.options().header("Team Selector Add-on for BedWars2023 Mini-game.\n\nDocumentation:\n" +
-                SELECTOR_ITEM_STACK_MATERIAL + ": WOOL - The material you want the team-selector item be.\n" +
-                SELECTOR_SLOT + ": 0 - The slot where to put the item. Set it to -1 to assign the first empty slot.\n" +
-                GIVE_SELECTOR_SELECTED_TEAM_COLOR + ": true - True if you the selector to have the selected team's color.\n" +
-                ALLOW_TEAM_CHANGE + ": true - True if you want to allow players to change selected team.\n" +
-                ALLOW_MOVE_TROUGH_INVENTORY + ": false - True if you want to allow players to move it in inventory.\n" +
-                BALANCE_TEAMS + ": true - True if you want to have balanced teams size.\n" +
-                GUI_OPEN_SOUND + ": BLOCK_SHULKER_BOX_OPEN - The sound to be played when you open the team selector.\n" +
-                SUCCESS_SOUND + ": BLOCK_SHULKER_BOX_CLOSE - The sound to be played when you select a team successfully.\n" +
-                ERROR_SOUND + ": BLOCK_ANVIL_DESTROY - The sound to be played when you can't select a team.\n" +
-                TEAM_HELMET + ": true - Equip an helmet based on the color of team chosen to the player.\n" +
-                "Sounds for latest version: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html\n" +
-                "Sounds for 1.8 or older: https://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html");
-
+        yml.options().header("# BedWars2023-TeamSelector configuration\n\nteam-helmet: true # The material you want the team-selector item be.\n" +
+                "#team-selector-item-stack: WHITE_WOOL # Bukkit Material that opens the TeamSelector Menu\n" +
+                "#team-selector-slot: 0 # The slot where to put the item. Set it to -1 to assign the first empty slot.\n" +
+                "#give-team-color: true # true if you want to have the selectorTeam Item having the team's color.\n" +
+                "#allow-team-change: true # true if you want to allow players to change selected team.\n" +
+                "#allow-move-in-inventory: false # false - true if you want to allow players to move it in inventory.\n" +
+                "#balance-teams: false # true if you want to have balanced teams size.\n" +
+                "#gui-open-sound: BLOCK_SHULKER_BOX_OPEN # The sound to be played when you open the team selector.\n" +
+                "#success-sound: BLOCK_SHULKER_BOX_CLOSE # The sound to be played when you select a team successfully.\n" +
+                "#error-sound: BLOCK_ANVIL_DESTROY # The sound to be played when you can't select a team.");
         yml.addDefault(SELECTOR_ITEM_STACK_MATERIAL, Main.bw.getForCurrentVersion("WOOL", "WOOL", "WHITE_WOOL"));
         yml.addDefault(SELECTOR_SLOT, 4);
         yml.addDefault(GIVE_SELECTOR_SELECTED_TEAM_COLOR, true);

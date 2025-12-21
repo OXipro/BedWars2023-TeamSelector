@@ -7,3 +7,4 @@ target
 /out
 /pom.xml.versionsBackup
 /dependency-reduced-pom.xml
+/ci_settings.xml
