@@ -1,9 +1,13 @@
 package com.tomkeuper.bedwars.teamselector.teamselector;
 
+import com.tomkeuper.bedwars.teamselector.configuration.Config;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import com.tomkeuper.bedwars.api.arena.IArena;
 import com.tomkeuper.bedwars.api.arena.team.ITeam;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,6 +74,13 @@ public class TeamManager {
         ArenaPreferences preferences = getArena(arena);
         if (preferences != null) {
             preferences.setPlayerTeam(player, team);
+            if (Config.config.getBoolean("team-helmet")) {
+                ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
+                LeatherArmorMeta meta = (LeatherArmorMeta) helmet.getItemMeta();
+                meta.setColor(team.getColor().bukkitColor());
+                helmet.setItemMeta(meta);
+                player.getInventory().setHelmet(helmet);
+            }
         }
     }
 

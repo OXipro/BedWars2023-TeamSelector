@@ -246,15 +246,6 @@ public class TeamSelectorGUI {
         //Refresh ream selector item
         giveItem(player, bwt);
 
-        // give leather helmet based on chosen team color if config allows it
-        if (Config.config.getBoolean("team-helmet")) {
-            ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
-            LeatherArmorMeta meta = (LeatherArmorMeta) helmet.getItemMeta();
-            meta.setColor(bwt.getColor().bukkitColor());
-            helmet.setItemMeta(meta);
-            player.getInventory().setHelmet(helmet);
-        }
-
         player.sendMessage(Language.getMsg(player, Messages.TEAM_JOIN).replace("{color}", bwt.getColor().chat().toString()).replace("{team}", teamDisplayName)
                 .replace("{selected}", String.valueOf(TeamManager.getInstance().getMembers(bwt, arena))).replace("{total}", String.valueOf(arena.getMaxInTeam())));
         return true;
